@@ -1,0 +1,17 @@
+<div class="cover-wrap tag-cover {{#if tag.image}}" style="background-image: url({{tag.image}});"{{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}});"{{else}}no-image"{{/if}}{{/if}}>
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<h2 class="tag-title">Tag: {{tag.name}}</h2>
+					<div class="post-count">
+						<span><i class="fa fa-folder fa-fw"></i>Total {{plural pagination.total empty='0 Post' singular='% Post' plural='% Posts'}}</span>
+					</div>
+					{{#if tag.description}}
+					<p class="description tag-description">{{tag.description}}</p>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

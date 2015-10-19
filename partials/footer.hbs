@@ -1,0 +1,28 @@
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-md-4">
+                        {{> widget-text}}
+                    </div>
+                    <div class="col-md-4">
+                        {{> widget-newsletter}}
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-6">
+                        {{> social-links}}
+                    </div>
+                    <div class="col-sm-6 col-sm-pull-6">&copy; {{date format="YYYY"}} <a href="{{@blog.url}}">{{@blog.title}}</a>. All right Reserved.</div>                </div>
+            </div>
+        </div>
+    </footer>
+    {{ghost_foot}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{asset "js/bootstrap.min.js"}}"></script>
+    <script src="{{asset "js/plugins.js"}}"></script>
+    <script src="{{asset "js/main.js"}}"></script>
+</body>
+</html>

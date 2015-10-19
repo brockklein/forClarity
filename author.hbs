@@ -1,0 +1,53 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{> cover-author}}
+<div class="main-content-wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+                {{#foreach posts}}
+				<article class="post-wrap">
+                    {{#if featured}}
+                    <div class="featured"></div>
+                    {{/if}}
+                    {{#if image}}
+                    <a href="{{url}}" title="{{{title}}}">
+                        <div class="featured-media" style="background-image: url({{image}});"></div>
+                    </a>
+                    {{/if}}
+                    <div class="post-content{{#unless image}} no-media{{/unless}}">
+                        <h2 class="post-title">
+                            <a href="{{url}}">{{{title}}}</a>
+                        </h2>
+                        <div class="post-entry">
+                            {{content words="25"}}
+                        </div>
+                        <div class="post-permalink">
+                            <a href="{{url}}">Continue Reading...</a>
+                        </div>
+                        <div class="post-meta">
+                            {{#author}}
+                            <span class="author">
+                                <i class="fa fa-user"></i>
+                                <a href="{{url}}">{{name}}</a>
+                            </span>
+                            {{/author}}
+                            <span class="date">
+                                <i class="fa fa-calendar-o"></i>
+                                {{date format="MMM DD, YYYY"}}
+                            </span>
+                            <span class="comment">
+                                <i class="fa fa-comment-o"></i>
+                                <a href="{{url}}#disqus_thread">0 Comments</a>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+                {{/foreach}}
+                {{pagination}}
+			</div>
+			{{> sidebar}}
+		</div>
+	</div>
+</div>
